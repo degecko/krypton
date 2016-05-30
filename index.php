@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width" />
+	<meta name="description" value="Krypton is a multi encoder/decoder for strings." />
+	<meta name="keywords" value="binary decoder, binary encoder, binary decrypter, binary crypter, binary online, hex decoder, hex encoder, hex decrypter, hex crypter, hex online, ascii decoder, ascii encoder, ascii decrypter, ascii crypter, ascii online, base64 decoder, base64 encoder, base64 decrypter, base64 crypter, base64 online, caesar decoder, caesar encoder, caesar decrypter, caesar crypter, caesar online, morse decoder, morse encoder, morse decrypter, morse crypter, morse online, rot13 decoder, rot13 encoder, rot13 decrypter, rot13 crypter, rot13 online, url decoder, url encoder, url decrypter, url crypter, url online, aes decoder, aes encoder, aes decrypter, aes crypter, aes online, tripledes decoder, tripledes encoder, tripledes decrypter, tripledes crypter, tripledes online, des decoder, des encoder, des decrypter, des crypter, des online, rabbit decoder, rabbit encoder, rabbit decrypter, rabbit crypter, rabbit online, rc4 decoder, rc4 encoder, rc4 decrypter, rc4 crypter, rc4 online, md5 crypter, md5 checksum" />
+
+	<title>&bull; MultiEncoder.com: KRYPTON</title>
+
+	<!--[if lt IE 9]>
+		<script src="js/html5.js" type="text/javascript"></script>
+		<script src="js/excanvas.js" type="text/javascript"></script>
+	<![endif]-->
+
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="css/reset.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<style id="override"></style>
+</head>
+<body>
+
+<div class="wrapper unpadded-elements">
+	<div class="logo-block">
+		<div>
+			<div class="logo"><img src="images/logo-1C90E4.png" /></div>
+			<div class="description">The last string encoder/decoder you'll ever need.</div>
+			<div class="about">This online tool works based on the <strong>focused input</strong>. Paste your text wherever you need and press "Execute" (ALT + X), the rest is handled automatically.<br />Also, you can customize this page from the <strong>Settings</strong> area.<br /><br />&copy; <?php echo (date('y') == '14' ? '' : '2014-') . date('Y'); ?> <a href="http://www.multiencoder.com/"><strong>MultiEncoder.com</strong></a>. <i class="fa fa-code"></i> by <a href="http://webtoil.co/" target="_blank"><strong>WebToil.co</strong></a>.</div>
+			
+			<div class="buttons-block">
+				<button id="settings-btn" class="btn btn-link btn-lg"><i class="fa fa-gear"></i> Settings</button>
+				<button id="execute" class="btn btn-primary btn-lg" data-placement="top" title="ALT + X"><i class="fa fa-bolt"></i> E<u>x</u>ecute</button>
+			</div>
+		</div>
+	</div>
+
+	<div class="code-block">
+		<textarea id="plain" autofocus></textarea>
+		<ul class="block-tools">
+			<li class="remove-spaces" data-placement="top" title="Remove Spaces"><i class="underline-icon"><span></span></i></li>
+			<li class="remove-duplicated-lines" data-placement="top" title="Remove duplicated lines"><i class="fa fa-align-left"></i></li>
+			<li class="commas" data-placement="top" title="Commas on/off"><i class="fa fa-magic"></i></li>
+			<li class="reverse" data-placement="top" title="Reverse string"><i class="fa fa-exchange"></i></li>
+			<li class="block-label">Plain</li>
+		</ul>
+	</div>
+
+	<div class="code-block">
+		<textarea id="binary"></textarea>
+		<ul class="block-tools">
+			<li class="remove-spaces" data-placement="top" title="Remove Spaces"><i class="underline-icon"><span></span></i></li>
+			<li class="reverse" data-placement="top" title="Reverse string"><i class="fa fa-exchange"></i></li>
+			<li class="block-label">Binary</li>
+		</ul>
+		<div class="description">binary translator, binary to decimal, binary converter, binary code, binary fission, binary search, binary to text, binary to hex, binary search tree</div>
+	</div>
+
+	<div class="code-block">
+		<textarea id="hex"></textarea>
+		<ul class="block-tools">
+			<li class="remove-spaces" data-placement="top" title="Remove Spaces"><i class="underline-icon"><span></span></i></li>
+			<li class="commas" data-placement="top" title="Commas on/off"><i class="fa fa-magic"></i></li>
+			<li class="reverse" data-placement="top" title="Reverse string"><i class="fa fa-exchange"></i></li>
+			<li class="block-label">HEX</li>
+		</ul>
+		<div class="description">hex to decimal, hex color, hexane, hex to rgb, hexadecimal, hex editor, hexxit, hex to binary, hexagon</div>
+	</div>
+
+	<div class="code-block">
+		<textarea id="ascii"></textarea>
+		<ul class="block-tools">
+			<li class="reverse" data-placement="top" title="Reverse string"><i class="fa fa-exchange"></i></li>
+			<li class="remove-spaces" data-placement="top" title="Remove Spaces"><i class="underline-icon"><span></span></i></li>
+			<li class="commas" data-placement="top" title="Commas on/off"><i class="fa fa-magic"></i></li>
+			<li class="block-label">ASCII</li>
+		</ul>
+		<div class="description">ascii table, ascii art, ascii code, ascii art generator, ascii to hex, ascii middle finger, ascii converter, ascii faces, ascii to binary</div>
+	</div>
+
+	<div class="code-block">
+		<textarea id="base64"></textarea>
+		<ul class="block-tools">
+			<li class="reverse" data-placement="top" title="Reverse string"><i class="fa fa-exchange"></i></li>
+			<li class="block-label">Base64</li>
+		</ul>
+		<div class="description">base64 decode, base64, base64 encode, base64 image, base64 characters, base64 to hex, base64 to ascii, base64 encode java, base64 encode javascript, base64 image decoder</div>
+	</div>
+
+	<div class="code-block has-key">
+		<textarea id="caesar"></textarea>
+		<input type="text" class="key" placeholder="key" />
+		<ul class="block-tools">
+			<li class="reverse" data-placement="top" title="Reverse string"><i class="fa fa-exchange"></i></li>
+			<li class="block-label">Caesar</li>
+		</ul>
+		<div class="description">caesar cipher, caesar decoder, caesar decrypter, caesar crypter, caesar encoder, caesar shift</div>
+	</div>
+
+	<div class="code-block">
+		<textarea id="morse"></textarea>
+		<ul class="block-tools">
+			<li class="reverse" data-placement="top" title="Reverse string"><i class="fa fa-exchange"></i></li>
+			<li class="block-label">Morse</li>
+		</ul>
+		<div class="description">morse code translator, morse code chart, morse fall scale, morse high school, morse high school, morse high school, morse, morse code alphabet</div>
+	</div>
+
+	<div class="code-block">
+		<textarea id="rot13"></textarea>
+		<ul class="block-tools">
+			<li class="reverse" data-placement="top" title="Reverse string"><i class="fa fa-exchange"></i></li>
+			<li class="block-label">Rot13</li>
+		</ul>
+		<div class="description">rot13 cipher, rot13 decrypt, rot13 algorithm</div>
+	</div>
+
+	<div class="code-block">
+		<textarea id="url"></textarea>
+		<ul class="block-tools">
+			<li class="reverse" data-placement="top" title="Reverse string"><i class="fa fa-exchange"></i></li>
+			<li class="block-label">URL</li>
+		</ul>
+		<div class="description">url decode, url builder, url encoding</div>
+	</div>
+
+	<div class="code-block has-key">
+		<textarea id="aes"></textarea>
+		<input type="text" class="key" placeholder="key" />
+		<ul class="block-tools">
+			<li class="reverse" data-placement="top" title="Reverse string"><i class="fa fa-exchange"></i></li>
+			<li class="block-label">AES</li>
+		</ul>
+		<div class="description">aes decrypt, aes crypt, aes key</div>
+	</div>
+
+	<div class="code-block has-key">
+		<textarea id="tripledes"></textarea>
+		<input type="text" class="key" placeholder="key" />
+		<ul class="block-tools">
+			<li class="reverse" data-placement="top" title="Reverse string"><i class="fa fa-exchange"></i></li>
+			<li class="block-label">TripleDES</li>
+		</ul>
+		<div class="description">tripledes encoder, tripledes decoder, tripledes crypter, tripledes decrypter</div>
+	</div>
+
+	<div class="code-block has-key">
+		<textarea id="rabbit"></textarea>
+		<input type="text" class="key" placeholder="key" />
+		<ul class="block-tools">
+			<li class="reverse" data-placement="top" title="Reverse string"><i class="fa fa-exchange"></i></li>
+			<li class="block-label">Rabbit</li>
+		</ul>
+		<div class="description">rabbit encoder, rabbit decoder, rabbit crypter, rabbit decrypter</div>
+	</div>
+
+	<div class="code-block has-key">
+		<textarea id="rc4"></textarea>
+		<input type="text" class="key" placeholder="key" />
+		<ul class="block-tools">
+			<li class="reverse" data-placement="top" title="Reverse string"><i class="fa fa-exchange"></i></li>
+			<li class="block-label">RC4</li>
+		</ul>
+		<div class="description">rc4 encoder, rc4 decoder, rc4 crypter, rc4 decrypter</div>
+	</div>
+
+	<div class="code-block hashes has-key">
+		<table class="table">
+			<thead>
+				<tr>
+					<th class="algorithm">Algorithm</th>
+					<th>Value</th>
+				</tr>
+			</thead>
+
+			<tbody>
+				<tr><td>MD5</td><td><code id="md5"></code></td></tr>
+				<tr><td>SHA1</td><td><code id="sha1"></code></td></tr>
+				<tr><td>SHA256</td><td><code id="sha256"></code></td></tr>
+				<tr><td>SHA512</td><td><code id="sha512"></code></td></tr>
+				<tr><td>SHA3 224</td><td><code id="sha3_224"></code></td></tr>
+				<tr><td>SHA3 256</td><td><code id="sha3_256"></code></td></tr>
+				<tr><td>SHA3 384</td><td><code id="sha3_384"></code></td></tr>
+				<tr><td>SHA3 512</td><td><code id="sha3_512"></code></td></tr>
+				<tr><td>RIPEMD160</td><td><code id="ripemd160"></code></td></tr>
+				<tr><td>HMAC MD5 (+key)</td><td><code id="hmac_md5"></code></td></tr>
+				<tr><td>HMAC SHA1 (+key)</td><td><code id="hmac_sha1"></code></td></tr>
+				<tr><td>HMAC SHA256 (+key)</td><td><code id="hmac_sha256"></code></td></tr>
+				<tr><td>HMAC SHA512 (+key)</td><td><code id="hmac_sha512"></code></td></tr>
+				<tr><td>HMAC PBKDF2 128 (+key)</td><td><code id="hmac_pbkdf2_128"></code></td></tr>
+				<tr><td>HMAC PBKDF2 256 (+key)</td><td><code id="hmac_pbkdf2_256"></code></td></tr>
+				<tr><td>HMAC PBKDF2 512 (+key)</td><td><code id="hmac_pbkdf2_512"></code></td></tr>
+			</tbody>
+		</table>
+
+		<input type="text" class="key" placeholder="key" />
+
+		<ul class="block-tools">
+			<li class="block-label">Digest</li>
+		</ul> 
+	</div>
+</div>
+
+<div id="settings-wrapper">
+	<div id="settings">
+		<h4>Settings</h4>
+
+		<h5>Visible encoders / ciphers</h5>
+
+		<ul class="active-ciphers checklist">
+			<li class="enabled" data-handle="binary"><i class="fa fa-check"></i> Binary</li>
+			<li class="enabled" data-handle="hex"><i class="fa fa-check"></i> HEX</li>
+			<li class="enabled" data-handle="ascii"><i class="fa fa-check"></i> ASCII</li>
+			<li class="enabled" data-handle="base64"><i class="fa fa-check"></i> Base64</li>
+			<li class="enabled" data-handle="caesar"><i class="fa fa-check"></i> Caesar</li>
+			<li class="enabled" data-handle="morse"><i class="fa fa-check"></i> Morse</li>
+			<li class="enabled" data-handle="rot13"><i class="fa fa-check"></i> Rot13</li>
+			<li class="enabled" data-handle="url"><i class="fa fa-check"></i> URL</li>
+			<li class="enabled" data-handle="aes"><i class="fa fa-check"></i> AES</li>
+			<li class="enabled" data-handle="tripledes"><i class="fa fa-check"></i> TripleDES</li>
+			<li class="enabled" data-handle="rabbit"><i class="fa fa-check"></i> Rabbit</li>
+			<li class="enabled" data-handle="rc4"><i class="fa fa-check"></i> RC4</li>
+		</ul>
+
+		<br />
+
+		<h5>Auto-execute after each input change</h5>
+		
+		<ul class="realtime checklist">
+			<li id="realtime-encoding"><i class="fa fa-check"></i> Realtime Encoding</li>
+		</ul>
+		
+		<br />
+		
+		<h5>Choose a primary color</h5>
+
+		<ul class="color-list">
+			<li data-color="1C90E4"><i class="fa fa-check"></i></li>
+			<li data-color="962525"><i class="fa fa-check"></i></li>
+			<li data-color="4CA816"><i class="fa fa-check"></i></li>
+			<li data-color="D36800"><i class="fa fa-check"></i></li>
+			<li data-color="7A3AB5"><i class="fa fa-check"></i></li>
+		</ul>
+
+		<hr />
+
+		<p class="info"><strong>Krypton</strong> script by <a style="color: #fff" href="http://webtoil.co/" target="_blank"><strong>WebToil.co</strong></a>. Version 2.0.<br />All the settings are saved using the <strong>localStorage</strong> HTML5 functionality.</p>
+		<i class="fa fa-times close" title="Close"></i>
+	</div>
+</div>
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/jquery.nicescroll.min.js"></script>
+<script type="text/javascript" src="js/jquery.hotkeys.min.js"></script>
+<script type="text/javascript" src="js/cjs/rollups/md5.js"></script>
+<script type="text/javascript" src="js/cjs/rollups/sha1.js"></script>
+<script type="text/javascript" src="js/cjs/rollups/sha256.js"></script>
+<script type="text/javascript" src="js/cjs/rollups/sha512.js"></script>
+<script type="text/javascript" src="js/cjs/rollups/sha3.js"></script>
+<script type="text/javascript" src="js/cjs/rollups/ripemd160.js"></script>
+<script type="text/javascript" src="js/cjs/rollups/hmac-md5.js"></script>
+<script type="text/javascript" src="js/cjs/rollups/hmac-sha1.js"></script>
+<script type="text/javascript" src="js/cjs/rollups/hmac-sha256.js"></script>
+<script type="text/javascript" src="js/cjs/rollups/hmac-sha512.js"></script>
+<script type="text/javascript" src="js/cjs/rollups/pbkdf2.js"></script>
+<script type="text/javascript" src="js/cjs/rollups/aes.js"></script>
+<script type="text/javascript" src="js/cjs/rollups/tripledes.js"></script>
+<script type="text/javascript" src="js/cjs/rollups/rabbit.js"></script>
+<script type="text/javascript" src="js/cjs/rollups/rc4.js"></script>
+<script type="text/javascript" src="js/krypton.js?_=12987635"></script>
+<script type="text/javascript">
+    jQuery(document).ready(function ($) {
+
+        Krypton.init();
+    
+    });
+</script>
+
+</body>
+</html>
