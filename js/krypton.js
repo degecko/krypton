@@ -555,7 +555,6 @@ Krypton.applyMainColor = function ()
 {
 	var color = '#' + ls.color;
 
-	$('.logo-block .logo img').attr('src', 'images/logo-' + ls.color + '.png');
 	$('style#override').html('::selection { background: ' + color + ' } ::-moz-selection { background: ' + color + ' } .nicescroll-rails.focused > div { background-color: ' + color + ' !important; } #settings h4 { border-color: ' + color + ' } .btn-primary, .btn-primary:hover { background-color: ' + color + ' } .code-block input:focus, .code-block textarea:focus, .logo-block a { color: ' + color + ' }');
 }
 
