@@ -615,7 +615,7 @@ Krypton.ciphers = {
 			return arr.reverse().join("").trim();
 		},
 		hex: function () {
-			var string = Krypton.o.content.toLowerCase();
+			var string = Krypton.o.content;
 			var str = '', i = 0, c;
 
 			for (; i < string.length; i++)
