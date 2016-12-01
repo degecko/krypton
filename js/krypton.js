@@ -620,8 +620,9 @@ Krypton.ciphers = {
 
 			for (; i < string.length; i++)
 			{
-				c = string.charCodeAt(i);
-				str += c.toString(16) + ' ';
+				c = string.charCodeAt(i).toString(16);
+				c = c == '0' ? '00' : c;
+				str += c + ' ';
 			}
 
 			return str.trim();
